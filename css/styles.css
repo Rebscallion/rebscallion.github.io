@@ -1,8 +1,102 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Finlandica", sans-serif;
 }
 
-body {
-  background-color: peachpuff;
+#name-badge {
+  height: 356.16px;
+  position: absolute;
+  top: 0;
+  left: 80px;
+  z-index: 30;
+}
+
+#header {
+  height: 161px;
+  font-size: 32px;
+  font-weight: 500;
+  border-bottom: 2px solid black;
+  z-index: 20;
+}
+#header #banner {
+  height: 30px;
+  background-color: #FFD6FF;
+}
+#header #site-nav {
+  height: 129px;
+  background-color: white;
+  padding: 0 128px;
+  border-top: 2px solid black;
+}
+#header #site-nav ul {
+  display: flex;
+  float: right;
+  line-height: 131px;
+}
+#header #site-nav ul .list-item {
+  list-style: none;
+  margin-left: 100px;
+}
+#header #site-nav ul .list-item #cta {
+  background-color: #A5FFA5;
+  font-family: "Finlandica", sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  border-radius: 8px;
+  height: 46px;
+  width: 139px;
+  border: 1px solid #DA71D6;
+}
+
+#hero-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-bottom: 2px solid black;
+  height: 919px;
+}
+#hero-container #one {
+  border-right: 2px solid black;
+  background-color: #FFD6FF;
+  display: table;
+}
+#hero-container #one #text-box {
+  display: table-cell;
+  vertical-align: middle;
+}
+#hero-container #one #text-box h1 {
+  font-weight: 400;
+  font-size: 40px;
+  width: 652px;
+  margin: auto;
+}
+#hero-container #one #text-box p {
+  font-size: 24px;
+  width: 652px;
+  margin: auto;
+  margin-top: 29px;
+}
+#hero-container #two {
+  background-color: #EDFFED;
+}
+#hero-container #two #me {
+  height: 736px;
+  position: absolute;
+  top: 347px;
+  right: 86px;
+  z-index: 20;
+}
+#hero-container #two #small-daisy {
+  height: 265.77px;
+  position: absolute;
+  top: 163px;
+  right: 677px;
+  z-index: 5;
+}
+#hero-container #two #big-daisy {
+  height: 736px;
+  position: absolute;
+  top: 254px;
+  right: 0px;
+  z-index: 10;
 }/*# sourceMappingURL=styles.css.map */
