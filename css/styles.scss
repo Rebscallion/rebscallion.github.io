@@ -6,113 +6,548 @@
     font-family: $bodyFont;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 #name-badge {
-    height: 356.16px;
     position: absolute;
-    top: 0;
-    left: 80px;
+    top: 9px;
+    left: 19px;
     z-index: 30;
+
+    img {
+        height: 76px;
+    }
+}
+
+#banner {
+    display: none;
 }
 
 #header {
-    height: 161px;
-    font-size: 32px;
-    font-weight: 500;
+    height: 98px;
+    font-size: 20px;
+    font-family: --fancyFont;
     border-bottom: 2px solid black;
     z-index: 20;
 
-    #banner {
-        height: 30px;
-        background-color: $lpurple;
-    }
-
     #site-nav {
-        height: 129px;
+        display: none;
+        line-height: 129px;
         background-color: white;
-        padding: 0 128px;
         border-top: 2px solid black;
+        padding-top: 200px;
 
         ul {
-            display: flex;
-            float: right;
-            line-height: 131px;
+            margin: auto;
+            text-align: center;
+            font-size: 35px;
+            width: 156px;
 
             .list-item {
                 list-style: none;
-                margin-left: 100px;
+                line-height: 35px;
+                margin-bottom: 50px;
+            }
 
-                #cta {
-                    background-color: $green;
-                    font-family: $bodyFont;
-                    font-size: 32px;
-                    font-weight: 500;
-                    border-radius: 8px;
-                    height: 46px;
-                    width: 139px;
-                    border: 1px solid $purple;
-                }
+            .list-item:hover {
+                cursor: pointer;
+                color: #6F2A41;
+                font-size: 38px;
+                transition: .3s;
+            }
+
+            #cta {
+                background-color: $lgreen;
+                padding: 14px;
+                border-radius: 8px;
+                border: 1px solid $purple;
+            }
+
+            #cta:hover {
+                font-size: 35px;
+                background-color: white;
             }
         }
+    }
+
+    #site-nav.open {
+        display: block;
+        position: absolute;
+        background-color: $lpurple;
+        z-index: 999;
+        height: 100%;
+        width: 100%;
+
+        #exit {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    i {
+        font-size: 50px;
+        line-height: 98px;
+        float: right;
+        margin-right: 19px;
     }
 }
 
 #hero-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    border-bottom: 2px solid black;
-    height: 919px;
+    background-color: $lpurple;
+    height: 730px;
+    position: relative;
+    overflow: hidden;
 
     #one {
-        border-right: 2px solid black;
         background-color: $lpurple;
         display: table;
 
         #text-box {
             display: table-cell;
             vertical-align: middle;
-
+            width: 80%;
+            padding-left: 20px;
 
             h1 {
-                font-weight: 400;
-                font-size: 40px;
-                width: 652px;
-                margin: auto;
+                font-size: 18px;
+                font-weight: 500;
+                width: 305px;
+                margin-top: 112px;
             }
 
             p {
-                font-size: 24px;
-                width: 652px;
-                margin: auto;
-                margin-top: 29px;
+                font-size: 14px;
+                width: 309px;
+                margin-top: 12px;
             }
+        }
+
+        #left-mob-blob {
+            display: none;
         }
     }
 
     #two {
-        background-color: $lgreen;
 
-        #me {
-            height: 736px;
+        #mob-blob-2 {
+            display: none;
+        }
+
+        #mob-blob {
             position: absolute;
-            top: 347px;
-            right: 86px;
-            z-index: 20;
+            z-index: 5;
+            top: 0;
+            right: 0;
         }
 
         #small-daisy {
-            height: 265.77px;
-            position: absolute;
-            top: 163px;
-            right: 677px;
-            z-index: 5;
+            display: none;
         }
 
         #big-daisy {
-            height: 736px;
+            height: 464px;
             position: absolute;
-            top: 254px;
-            right: 0px;
+            bottom: -55px;
+            left: -38px;
             z-index: 10;
+        }
+
+        #me {
+            height: 388px;
+            position: absolute;
+            bottom: 0;
+            right: 19px;
+            z-index: 20;
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+    #name-badge {
+        top: 42px;
+        left: 37px;
+
+        img {
+            height: 200px;
+        }
+    }
+
+    #banner {
+        display: block;
+        width: 100vw;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        background-color: $lpurple;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 5px 0;
+    }
+
+    .banner-content {
+        font-size: 18px;
+        display: block;
+        width: 130%;
+        transform: translateX(100%);
+        animation: move 30s linear infinite;
+    }
+
+    @keyframes move {
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    #header {
+        height: 117px;
+
+        #site-nav {
+            padding-top: 240px;
+
+            ul {
+                font-size: 46px;
+                width: 195px;
+
+                .list-item {
+                    line-height: 46px;
+                    margin-bottom: 85px;
+                }
+
+                .list-item:hover {
+                    font-size: 50px;
+                }
+
+
+                #cta:hover {
+                    font-size: 46px;
+                }
+            }
+        }
+
+        #site-nav.open {
+            height: 100vh;
+        }
+
+        i {
+            font-size: 70px;
+            line-height: 0;
+            margin-top: 38px;
+        }
+    }
+
+    #hero-container {
+        border-bottom: 1px solid black;
+        height: 90vh;
+        width: 100vw;
+
+        #one {
+
+            #text-box {
+                border: none;
+                padding-left: 58px;
+
+                h1 {
+                    font-size: 40px;
+                    width: 680px;
+                    margin-top: 214px;
+                }
+
+                p {
+                    font-size: 24px;
+                    width: 585px;
+                }
+            }
+        }
+
+        #two {
+
+            #mob-blob-2 {
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+
+            #mob-blob {
+                width: 400px;
+            }
+
+            #big-daisy {
+                height: 505px;
+                left: 470px;
+                bottom: 0;
+            }
+
+            #me {
+                height: 545px;
+                right: 45px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #name-badge {
+        top: 52px;
+        left: 40px;
+
+        img {
+            height: 300px;
+        }
+    }
+
+    #banner {
+        height: 30px;
+    }
+
+    .banner-content {
+        position: inherit;
+        font-size: 22px;
+        width: 115%;
+    }
+
+    #header {
+        height: 110px;
+        margin-top: 40px;
+
+        #site-nav {
+            display: block;
+            padding: 0;
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                margin: 0;
+                font-size: 35px;
+                width: 100vw;
+
+                .list-item {
+                    list-style: none;
+                    line-height: 35px;
+                    margin-bottom: 0;
+                    margin-top: 22px;
+                    padding: 14px;
+                }
+
+                .list-item:hover {
+                    font-size: 35px;
+                }
+
+
+                #cta:hover {
+                    font-size: 35px;
+                }
+
+                #cta {
+                    margin: 22px 25px 0 25px;
+                }
+            }
+        }
+
+        i {
+            display: none;
+        }
+    }
+
+    #hero-container {
+
+        #one #text-box {
+            padding-left: 78px;
+
+            h1 {
+                margin-top: 290px;
+            }
+        }
+
+        #two {
+            background-color: $lpurple;
+
+            #me {
+                height: 665px;
+            }
+
+            #big-daisy {
+                height: 582px;
+                left: 511px;
+                bottom: 100px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1220px) {
+    #name-badge img {
+        height: 198px;
+    }
+
+    #header {
+        height: 100px;
+        margin-top: 40px;
+
+        #site-nav {
+            display: block;
+            padding: 0;
+
+            ul {
+                font-size: 30px;
+
+                .list-item {
+                    line-height: 27px;
+                    ;
+                }
+            }
+        }
+    }
+
+    #hero-container {
+        height: 86vh;
+        display: flex;
+
+        #one {
+            width: 50%;
+            position: relative;
+            border-right: 1px solid black;
+
+            #text-box {
+                display: block;
+                padding-left: 0;
+                margin-left: 50px;
+
+                h1 {
+                    font-size: 30px;
+                    margin-top: 180px;
+                    width: 510px;
+                }
+
+                p {
+                    font-size: 20px;
+                    width: 510px;
+                }
+            }
+
+            #left-mob-blob {
+                display: block;
+                position: absolute;
+                height: 325px;
+                bottom: 0;
+                left: -15px;
+            }
+        }
+
+        #two {
+            width: 50%;
+            background-color: $lgreen;
+            position: relative;
+
+            #small-daisy {
+                display: block;
+                height: 265.77px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 5;
+            }
+
+            #mob-blob {
+                display: none;
+            }
+
+            #me {
+                height: 600px;
+            }
+
+            #mob-blob-2 {
+                display: none;
+            }
+
+            #big-daisy {
+                height: 500px;
+                left: 280px;
+                bottom: 72px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    #hero-container #one #left-mob-blob {
+        bottom: -115px;
+    }
+
+    #hero-container #two #big-daisy {
+        bottom: -36px;
+    }
+
+    #hero-container #two #me {
+        height: 520px;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+
+    #hero-container {
+        height: 97vh;
+        display: flex;
+
+        #one {
+            width: 50%;
+            position: relative;
+            border-right: 1px solid black;
+
+            #text-box {
+                display: block;
+                padding-left: 0;
+                margin-left: 154px;
+
+                h1 {
+                    font-size: 42px;
+                    margin-top: 237px;
+                    width: 714px;
+                }
+
+                p {
+                    font-size: 24px;
+                }
+            }
+
+            #left-mob-blob {
+                display: block;
+                position: absolute;
+                height: 405px;
+                left: -5px;
+            }
+        }
+
+        #two {
+            width: 50%;
+            background-color: $lgreen;
+            position: relative;
+
+            #small-daisy {
+                display: block;
+                height: 314px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 5;
+            }
+
+            #me {
+                height: 736px;
+            }
+
+            #big-daisy {
+                height: 686px;
+                left: 405px;
+                bottom: 170px;
+            }
         }
     }
 }
