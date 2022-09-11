@@ -10,15 +10,25 @@ body {
     overflow-x: hidden;
 }
 
-#name-badge {
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+#plain-daisy {
     position: absolute;
     top: 9px;
     left: 19px;
     z-index: 30;
+    height: 76px;
+}
 
-    img {
-        height: 76px;
-    }
+#name-badge {
+    display: none;
 }
 
 #banner {
@@ -31,6 +41,18 @@ body {
     font-family: --fancyFont;
     border-bottom: 2px solid black;
     z-index: 20;
+    display: flex;
+
+    #name-tag {
+        margin: 18px 0 0 115px;
+        width: 45%;
+
+        li {
+            font-size: 20px;
+            font-family: $fancyFont;
+            list-style: none;
+        }
+    }
 
     #site-nav {
         display: none;
@@ -92,6 +114,7 @@ body {
         line-height: 98px;
         float: right;
         margin-right: 19px;
+        width: 5%;
     }
 }
 
@@ -165,11 +188,131 @@ body {
     }
 }
 
+#about-container {
+    height: 625px;
+    background-color: $lgreen;
+    border-bottom: 2px solid black;
+    position: relative;
+
+    #about-blob {
+        height: 530px;
+        position: absolute;
+        z-index: 10;
+        top: 50px;
+        left: -60px;
+    }
+
+    #about-text {
+        position: absolute;
+        z-index: 30;
+        top: 158px;
+        left: 27px;
+        width: 84%;
+        text-align: center;
+    }
+}
+
+#portfolio-container {
+    border-bottom: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 19px;
+    background-color: $lpurple;
+
+    .project-container {
+        height: 206px;
+        width: 330px;
+        background-color: $lgreen;
+        border: 1px solid $green;
+        box-shadow: 4px 4px 5px 1px #EBB2E8;
+        border-radius: 10px;
+        margin: auto;
+        margin-bottom: 43px;
+
+        img {
+            width: 94%;
+            height: 80%;
+            object-fit: cover;
+            top: 0;
+            padding: 10px 10px 0 10px;
+            border-radius: 18px;
+        }
+
+        #powershop {
+            width: 59%;
+            padding-left: 104px;
+
+        }
+
+        h3 {
+            font-size: $bodyFont;
+            font-size: 15px;
+            color: #A740A3;
+            height: 10%;
+            text-align: center;
+        }
+
+        i {
+            line-height: 15px;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+    }
+}
+
+footer {
+    height: 162px;
+    text-align: center;
+    width: 100vw;
+
+    h3 {
+        font-size: 25px;
+        margin: 22px 0 13px 0;
+    }
+
+    #email {
+        font-size: 15px;
+        margin-bottom: 19px;
+    }
+
+    #external-link {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+
+        p {
+            display: none;
+        }
+
+        i {
+            font-size: 25px;
+            padding: 0 12px;
+            color: black;
+            transition: .4s;
+        }
+
+        i:hover {
+            color: $purple;
+        }
+    }
+
+    #copyright {
+        font-size: 10px;
+        vertical-align: bottom;
+    }
+}
 
 
 @media only screen and (min-width: 768px) {
 
+    #plain-daisy {
+        display: none;
+    }
+
     #name-badge {
+        display: block;
+        position: absolute;
+        z-index: 20;
         top: 42px;
         left: 37px;
 
@@ -206,6 +349,11 @@ body {
 
     #header {
         height: 117px;
+        display: inherit;
+
+        #name-tag {
+            display: none;
+        }
 
         #site-nav {
             padding-top: 240px;
@@ -231,19 +379,20 @@ body {
         }
 
         #site-nav.open {
-            height: 100vh;
+            height: 140vh;
         }
 
         i {
             font-size: 70px;
             line-height: 0;
             margin-top: 38px;
+            margin-right: 30px;
         }
     }
 
     #hero-container {
         border-bottom: 1px solid black;
-        height: 90vh;
+        height: 98vh;
         width: 100vw;
 
         #one {
@@ -290,16 +439,81 @@ body {
             }
         }
     }
+
+    #about-container {
+        height: 944px;
+
+        #about-blob {
+            height: 743px;
+            top: 128px;
+            left: 48px;
+        }
+
+        #about-text {
+            top: 296px;
+            left: 142px;
+            width: 64%;
+
+            h2 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 22px;
+            }
+        }
+    }
+
+    #portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 135px;
+    }
+
+    footer {
+        height: 162px;
+        text-align: inherit;
+        display: flex;
+        flex-wrap: wrap;
+
+        #contact-deets {
+            padding: 40px 0 0 59px;
+            width: 42%;
+
+            h3 {
+                font-size: 24px;
+            }
+
+            #email {
+                font-size: 18px;
+            }
+        }
+
+        #external-link {
+            padding: 61px 59px 0 0;
+            margin-bottom: 0;
+            width: 42%;
+            justify-content: end;
+        }
+
+        #copyright {
+            padding-top: 10px;
+            text-align: center;
+            width: 100%;
+            font-size: 15px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) and (min-height: 700px) and (max-height: 874px) {
+    #hero-container {
+        height: 130vh;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
     #name-badge {
         top: 52px;
         left: 40px;
-
-        img {
-            height: 300px;
-        }
     }
 
     #banner {
@@ -346,7 +560,7 @@ body {
                 }
 
                 #cta {
-                    margin: 22px 25px 0 25px;
+                    margin: 22px 55px 0 25px;
                 }
             }
         }
@@ -360,29 +574,83 @@ body {
 
         #one #text-box {
             padding-left: 78px;
-
-            h1 {
-                margin-top: 290px;
-            }
         }
 
         #two {
             background-color: $lpurple;
 
-            #me {
-                height: 665px;
+            #big-daisy {
+                left: 511px;
+            }
+        }
+    }
+
+    #about-container {
+        height: 944px;
+
+        #about-blob {
+            height: 743px;
+            top: 128px;
+            left: 180px;
+        }
+
+        #about-text {
+            top: 296px;
+            left: 282px;
+            width: 46%;
+        }
+    }
+
+    #portfolio-container {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 120px 50px 0 50px;
+
+        .project-container {
+            height: 306px;
+            width: 400px;
+        }
+    }
+
+    footer {
+
+        #contact-deets {
+            padding: 40px 0 0 80px;
+            width: 42%;
+
+            h3 {
+                font-size: 28px;
             }
 
-            #big-daisy {
-                height: 582px;
-                left: 511px;
-                bottom: 100px;
+            #email {
+                font-size: 20px;
             }
+        }
+
+        #external-link {
+            padding: 66px 80px 0 0;
+
+            p {
+                display: contents;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+                transition: .4s;
+            }
+
+            a:hover {
+                color: $purple;
+            }
+        }
+
+        #copyright {
+            padding-top: 14px;
         }
     }
 }
 
-@media only screen and (min-width: 1220px) {
+@media only screen and (min-width: 1366px) {
     #name-badge img {
         height: 198px;
     }
@@ -474,6 +742,31 @@ body {
             }
         }
     }
+
+    #about-container {
+        height: 944px;
+
+        #about-blob {
+            height: 800px;
+            top: 72px;
+            left: 348px;
+        }
+
+        #about-text {
+            top: 272px;
+            left: 348px;
+            margin-left: 130px;
+            width: 470px;
+
+            h2 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 22px;
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: 1500px) {
@@ -487,6 +780,16 @@ body {
 
     #hero-container #two #me {
         height: 520px;
+    }
+
+    #about-container {
+        #about-blob {
+            left: 392px;
+        }
+
+        #about-text {
+            left: 392px;
+        }
     }
 }
 
@@ -548,6 +851,21 @@ body {
                 left: 405px;
                 bottom: 170px;
             }
+        }
+    }
+
+    #about-container {
+        height: 944px;
+
+        #about-blob {
+            height: 800px;
+            top: 72px;
+            left: 604px;
+        }
+
+        #about-text {
+            left: 604px;
+            margin-left: 130px;
         }
     }
 }
