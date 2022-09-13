@@ -250,7 +250,7 @@ footer #external-link p {
 }
 footer #external-link i {
   font-size: 25px;
-  padding: 0 12px;
+  padding: 0 15px 0 8px;
   color: black;
   transition: 0.4s;
 }
