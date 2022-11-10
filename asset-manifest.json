@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/rebekah-portfolio/static/css/main.073c9b0a.css",
+    "main.js": "/rebekah-portfolio/static/js/main.02f06b40.js",
+    "static/js/787.28cb0dcd.chunk.js": "/rebekah-portfolio/static/js/787.28cb0dcd.chunk.js",
+    "static/media/logo.svg": "/rebekah-portfolio/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/rebekah-portfolio/index.html",
+    "main.073c9b0a.css.map": "/rebekah-portfolio/static/css/main.073c9b0a.css.map",
+    "main.02f06b40.js.map": "/rebekah-portfolio/static/js/main.02f06b40.js.map",
+    "787.28cb0dcd.chunk.js.map": "/rebekah-portfolio/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.02f06b40.js"
+  ]
+}
